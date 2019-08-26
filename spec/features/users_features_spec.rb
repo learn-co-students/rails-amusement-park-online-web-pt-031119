@@ -1,5 +1,5 @@
 require_relative "../rails_helper.rb"
-describe 'Feature Test: User Signup', :type => :feature do
+describe 'Feature Test: User Signup:', :type => :feature do
 
   it 'successfully signs up as non-admin' do
     visit '/users/new'
@@ -89,7 +89,7 @@ describe 'Feature Test: User Signup', :type => :feature do
 
 end
 
-describe 'Feature Test: User Signout', :type => :feature do
+describe 'Feature Test: User Signout:', :type => :feature do
 
   it 'has a link to log out from the users/show page' do
     visit '/users/new'
@@ -138,7 +138,7 @@ describe 'Feature Test: User Signout', :type => :feature do
   end
 end
 
-describe 'Feature Test: Go on a Ride', :type => :feature do
+describe 'Feature Test: Go on a Ride:', :type => :feature do
 
   before :each do
     @rollercoaster = Attraction.create(
@@ -276,7 +276,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
   end
 end
 
-describe 'Feature Test: Admin Flow', :type => :feature do
+describe 'Feature Test: Admin Flow:', :type => :feature do
 
   before :each do
     @rollercoaster = Attraction.create(
