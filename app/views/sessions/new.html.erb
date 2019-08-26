@@ -1,0 +1,15 @@
+<h1>User Sign In:</h1>
+
+<%= form_for @user, url: signin_path, method: :post do |f| %>
+    <%= f.label :name %>
+    <%= f.collection_select :name, User.all, :name, :name %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, id: "password" %>
+
+    <%= f.submit "Sign In" %>
+
+<% end %> 
+
+
+
