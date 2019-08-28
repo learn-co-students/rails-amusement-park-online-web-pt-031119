@@ -1,0 +1,13 @@
+<p><%= session[:message] if session[:message] %></p>
+
+<h1><%= @user.name %></h1>
+<h2><%= admin?(@user) %></h2>
+<h3>Mood: <%= @user.mood %></h3>
+<h3>Nausea: <%= @user.nausea %></h3>
+<h3>Happiness: <%= @user.happiness %></h3>
+<h3>Tickets: <%= @user.tickets %></h3>
+<h3>Height: <%= @user.height %></h3>
+
+
+<p><%= link_to("See attractions", attractions_path) %>
+<p><%= link_to("Log Out", logout_path, method: 'delete') %></p>
