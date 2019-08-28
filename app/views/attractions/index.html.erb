@@ -1,0 +1,12 @@
+<div class="container" role="main">
+    <h1>Listing attractions</h1>
+    <ul>
+        <% @attractions.each do |a| %>
+        <li><%= link_to "Go on #{a.name}", attraction_path(a.id) unless current_user.admin %></li>
+            <% if current_user.admin %>
+                <li><%= link_to "Show #{a.name}", attraction_path(a) %></li>
+            <% end %>
+        <% end %>
+    </ul>
+        <%= link_to 'New Attraction', new_attraction_path if current_user.admin %>
+</div>
