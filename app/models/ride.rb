@@ -3,19 +3,21 @@ class Ride < ApplicationRecord
 	belongs_to :user
 
 	def take_ride
-		@ride = Ride.create(:user_id => user.id, :attraction_id => attraction.id)
-		if @ride.user.tickets < @ride.attraction.tickets && @ride.user.height < @ride.attraction.min_height
-			"Sorry. You do not have enough tickets to ride the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
-		elsif @ride.user.tickets < @ride.attraction.tickets
-			"Sorry. You do not have enough tickets to ride the #{attraction.name}."
-		elsif @ride.user.height < @ride.attraction.min_height
-			"Sorry. You are not tall enough to ride the #{attraction.name}."
+		@message = nil
+		if self.user.tickets < self.attraction.tickets && self.user.height < self.attraction.min_height
+			@message = "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."
+		elsif self.user.tickets < self.attraction.tickets
+			@message = "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."
+		elsif self.user.height < self.attraction.min_height
+			@message = "Sorry. You are not tall enough to ride the #{self.attraction.name}."
 		else 
-			@ride.user.tickets = @ride.user.tickets -= @ride.attraction.tickets
-			@ride.user.nausea = @ride.user.nausea += @ride.attraction.nausea_rating
-			@ride.user.happiness = @ride.user.happiness += @ride.attraction.happiness_rating
-			@ride.user.save
+			self.user.tickets -= self.attraction.tickets
+			self.user.nausea += self.attraction.nausea_rating
+			self.user.happiness += self.attraction.happiness_rating
+			self.user.save
+			@message = "Thanks for riding the #{self.attraction.name}!"
 		end
+		@message
 	end
 
 end

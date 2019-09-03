@@ -10,3 +10,6 @@ end
 #   Password: <%= f.password_field :password %>
 #   <%= f.submit "Sign In" %>
 # <% end %>
+
+
+# <%= f.button_to "Go on this ride", rides_path %>

@@ -5,21 +5,17 @@ class RidesController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@user = User.find_by(id: session[:user_id])
-	    if @user
-	    	return head(:forbidden) unless @user.authenticate(user_params[:password])
-	    	session[:user_id] = @user.id
-	    	redirect_to user_path(@user)
+		@attraction = Attraction.find_by(id: params[:ride][:attraction_id])
+
+
+	    if @user && @attraction
+		    @ride = Ride.create(user_id: @user.id, attraction_id: @attraction.id)
+		    @message = @ride.take_ride
+		    redirect_to user_path(@user, :message => @message)
 	    else
 	    	redirect_to '/signin'
 	    end
 	end
-
-	private
-
-	def user_params
-    	params.require(:user).permit(:name, :password, :password_confirmation, :nausea, :happiness, :tickets, :height, :admin)
-  	end
 
 end

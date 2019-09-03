@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'users#new'
   resources :users
-  resources :attractions, only: [:index, :show]
+  resources :attractions, only: [:index, :show, :new, :create]
   resources :rides, only: [:new, :create]
   # root 'users#new'
   # post '/' => 'users#create'

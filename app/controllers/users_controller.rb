@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
   	if session[:user_id]
   		@user = User.find_by(id: params[:id])
+  		@message = params[:message]
   	else
   		redirect_to '/'
   	end
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation, :nausea, :happiness, :tickets, :height, :admin)
+    params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height, :admin)
   end
 
 end
