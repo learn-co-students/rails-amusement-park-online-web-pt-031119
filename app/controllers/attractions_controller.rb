@@ -54,5 +54,3 @@ class AttractionsController < ApplicationController
   	end
 
 end
-
-#This is just a test
