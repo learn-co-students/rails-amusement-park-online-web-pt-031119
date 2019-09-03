@@ -1,24 +1,11 @@
 
-<%=form_for @user do |u|%>
-<%=u.label :name%>
-<%=u.text_field :name%>
+<%=@user.name%>
 <br>
-<%= u.label :height%>
-<%= u.text_field :height%>
+<%=@user.height%>
 <br>
-<%= u.label :nausea%>
-<%= u.text_field :nausea%>
+<%=@user.nausea%>
 <br>
-<%= u.label :tickets%>
-<%= u.text_field :tickets%>
+<%=@user.tickets%>
 <br>
-<%= u.label :happiness%>
-<%= u.text_field :happiness%>
-<br>
-<%= u.label :password%>
-<%= u.text_field :password%>
-<br>
-
-
-<%= u.submit "Create User"%>
-<%end%>
+<%=@user.happiness%>
+Mood <%=@user.mood%>
