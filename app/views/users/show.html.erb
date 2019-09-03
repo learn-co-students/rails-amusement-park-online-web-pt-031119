@@ -1,0 +1,24 @@
+
+<%=form_for @user do |u|%>
+<%=u.label :name%>
+<%=u.text_field :name%>
+<br>
+<%= u.label :height%>
+<%= u.text_field :height%>
+<br>
+<%= u.label :nausea%>
+<%= u.text_field :nausea%>
+<br>
+<%= u.label :tickets%>
+<%= u.text_field :tickets%>
+<br>
+<%= u.label :happiness%>
+<%= u.text_field :happiness%>
+<br>
+<%= u.label :password%>
+<%= u.text_field :password%>
+<br>
+
+
+<%= u.submit "Create User"%>
+<%end%>
