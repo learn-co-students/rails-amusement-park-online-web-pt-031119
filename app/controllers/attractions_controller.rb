@@ -42,7 +42,7 @@ class AttractionsController < ApplicationController
 	end
 
 	def update
-		@attraction = Attraction.find_by(id: params[:id])
+		@attraction = Attraction.find_by(id: params[:id])r
 		@attraction.update(name: attraction_params[:name], tickets: attraction_params[:tickets], nausea_rating: attraction_params[:nausea_rating], happiness_rating: attraction_params[:happiness_rating], min_height: attraction_params[:min_height])
 		redirect_to attraction_path(@attraction)
 	end
@@ -54,3 +54,5 @@ class AttractionsController < ApplicationController
   	end
 
 end
+
+#This is just a test
