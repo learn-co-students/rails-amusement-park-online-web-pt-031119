@@ -1,0 +1,28 @@
+<%= form_for(@attraction) do |attraction_builder| %>
+    <p>
+        <%= attraction_builder.label :name %>
+        <%= attraction_builder.text_field :name %>
+    </p>
+
+    <p>
+        <%= attraction_builder.label :min_height %>
+        <%= attraction_builder.text_field :min_height %>
+    </p>
+
+    <p>
+        <%= attraction_builder.label :happiness_rating %>
+        <%= attraction_builder.text_field :happiness_rating %>
+    </p>
+
+    <p>
+        <%= attraction_builder.label :nausea_rating %>
+        <%= attraction_builder.text_field :nausea_rating %>
+    </p>
+
+    <p>
+        <%= attraction_builder.label :tickets %>
+        <%= attraction_builder.text_field :tickets %>
+    </p>
+
+    <%= attraction_builder.submit %>
+<% end %>
