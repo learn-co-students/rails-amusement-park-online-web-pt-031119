@@ -1,0 +1,38 @@
+<%= form_for(@user) do |new_user| %>
+    <p>
+        <label>Name</label><br>
+        <%= new_user.text_field :name %>
+    </p>
+
+    <p>
+        <label>Height (in inches)</label><br>
+        <%= new_user.text_field :height %>
+    </p>
+
+    <p>
+        <label>How happy are you? (1-5 scale)</label><br>
+        <%= new_user.text_field :happiness %>
+    </p>
+
+    <p>
+        <label>How nauseous are you? (1-5 scale)</label><br>
+        <%= new_user.text_field :nausea %>
+    </p>
+
+    <p>
+        <label>How many dollars are in your pocket?</label><br>
+        <%= new_user.text_field :tickets %>
+    </p>
+
+    <p>
+        <label>Check box if you are a theme park owner</label>
+        <input class="form-check-input" type="checkbox" value="1" name="user[admin]" id="user_admin">
+    </p>
+
+    <p>
+        <label>Password</label><br>
+        <%= new_user.text_field :password %>
+    </p>
+
+    <%= new_user.submit %>
+<% end %>
