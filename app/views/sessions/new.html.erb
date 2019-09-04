@@ -1,0 +1,8 @@
+<h1>You have reached the new page</h1>
+
+<%= form_for @user, url: signin_path, method: :post do |u| %>
+   <%= u.label :name %>
+   <%= u.collection_select :name, User.all, :name, :name %>
+   <%= u.label :password %>
+   <%= u.password_field :password, id: "password" %>
+   <%= u.submit "Sign In" %><% end %>
