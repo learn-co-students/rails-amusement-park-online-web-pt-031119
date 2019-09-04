@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_125449) do
     t.integer "min_height", default: 0
     t.integer "nausea_rating", default: 0
     t.integer "happiness_rating", default: 0
-    t.integer "ticket_number", default: 0
+    t.integer "tickets", default: 0
   end
 
   create_table "rides", force: :cascade do |t|
