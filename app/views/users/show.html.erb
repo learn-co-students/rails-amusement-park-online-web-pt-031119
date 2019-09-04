@@ -1,1 +1,13 @@
-<p>users/show</p>
+<p><%= session[:message] if session[:message] %></p>
+
+<ul>
+    <li><%= @user.name %></li>
+    <li><%= admin?(@user) %>/li>
+    <li>Tickets: <%= @user.tickets %></li>
+    <li>Mood: <%= @user.mood %></li>
+    <li>Height: <%= @user.height %></li>
+    <li></li>
+</ul>
+
+<p><%= link_to("See attractions", attractions_path) %>
+<p><%= link_to("Log Out", logout_path, method: 'delete') %></p>
