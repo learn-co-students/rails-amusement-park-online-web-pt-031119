@@ -1,37 +1,37 @@
 class AttractionsController < ApplicationController
     def new
-    @attraction = Attraction.new
-  end
+        @attraction = Attraction.new
+    end
 
-  def create
-    @attraction = Attraction.new(attraction_params)
-    @attraction.save
-    redirect_to @attraction
-  end
-  
-  def show
-    @attraction = Attraction.find_by(id: params[:id])
-    @user = current_user
-  end
+    def create
+        @attraction = Attraction.new(attraction_params)
+        @attraction.save
+        redirect_to @attraction
+    end
+    
+    def show
+        @attraction = Attraction.find_by(id: params[:id])
+        @user = current_user
+    end
 
-  def index
-    @user = current_user
-    @attractions = Attraction.all
-  end
+    def index
+        @user = current_user
+        @attractions = Attraction.all
+    end
 
-  def edit
-    @attraction = Attraction.find_by(id: params[:id])
-  end
+    def edit
+        @attraction = Attraction.find_by(id: params[:id])
+    end
 
-  def update
-    @attraction = Attraction.find_by(id: params[:id])
-    @attraction.update(attraction_params)
+    def update
+        @attraction = Attraction.find_by(id: params[:id])
+        @attraction.update(attraction_params)
 
-    redirect_to @attraction
-  end
+        redirect_to @attraction
+    end
 
-  private
+    private
     def attraction_params
-      params.require(:attraction).permit(:name, :min_height, :nausea_rating, :happiness_rating, :ticket_number)
+        params.require(:attraction).permit(:name, :min_height, :nausea_rating, :happiness_rating, :ticket_number)
     end
 end
