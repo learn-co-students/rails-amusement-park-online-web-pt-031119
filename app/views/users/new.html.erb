@@ -1,6 +1,5 @@
 <%= form_for(@user) do |new_user| %>
     <p>
-        
         <label>Name</label><br>
         <%= new_user.text_field :name %>
     </p>
@@ -32,7 +31,7 @@
 
     <p>
         <label>Password</label><br>
-        <%= new_user.text_field :password_digest %>
+        <%= new_user.text_field :password %>
     </p>
 
     <%= new_user.submit %>
