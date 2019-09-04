@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 2019_09_04_125449) do
 
   create_table "attractions", force: :cascade do |t|
     t.string "name"
-    t.integer "min_height"
-    t.integer "nausea_rating"
-    t.integer "happiness_rating"
-    t.integer "ticket_number"
+    t.integer "min_height", default: 0
+    t.integer "nausea_rating", default: 0
+    t.integer "happiness_rating", default: 0
+    t.integer "ticket_number", default: 0
   end
 
   create_table "rides", force: :cascade do |t|
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 2019_09_04_125449) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
-    t.integer "happiness"
-    t.integer "nausea"
-    t.integer "height"
-    t.integer "tickets"
+    t.integer "happiness", default: 0
+    t.integer "nausea", default: 0
+    t.integer "height", default: 0
+    t.integer "tickets", default: 0
+    t.boolean "admin", default: false
   end
 
 end
