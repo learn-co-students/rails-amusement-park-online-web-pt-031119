@@ -1,0 +1,20 @@
+<%=@attraction.name%>
+<br>
+<%=@attraction.nausea_rating%>
+<br>
+<%=@attraction.happiness_rating%>
+<br>
+<%=@attraction.tickets%>
+<br>
+<%=@attraction.min_height%>
+
+<br>
+
+<%= button_to "Go on this ride", action: "create" %>
+
+<%= form_for @attraction, method: :post do |a| %>
+   <% a.hidden_field :tickets, @attraction.tickets %>
+   <% a.submit " Go on this ride" %>
+
+
+<%end%>

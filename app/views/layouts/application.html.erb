@@ -21,6 +21,7 @@
         <a class="navbar-brand" href="<%= signin_url %>"/>Sign Up</a>
         <% if logged_in? %>
          <%= link_to "Log Out", signout_path, class: "navbar-brand", method: "DELETE" %>
+         <%= link_to "See attractions", attractions_path, class: "navbar-brand", method: "GET" %>
        <% end %>
         </div>
         <div class="navbar-collapse collapse">
