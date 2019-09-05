@@ -13,7 +13,8 @@
 <%= button_to "Go on this ride", action: "create" %>
 
 <%= form_for @attraction, method: :post do |a| %>
-   <% a.hidden_field :tickets, @attraction.tickets %>
+
+   <% a.hidden_field :tickets, value: @attraction.tickets %>
    <% a.submit " Go on this ride" %>
 
 
