@@ -5,8 +5,8 @@ class AttractionsController < ApplicationController
     end
     
     def create
+   
     binding.pry
-    
     redirect_to user_path current_user
     end
     
@@ -20,6 +20,8 @@ class AttractionsController < ApplicationController
     end
 
 
-
+    def attraction_params
+        params.require(:attraction).permit(:name, :ticket, :height, :nausea, :tickets, :happiness, :admin)
+     end
 
 end
