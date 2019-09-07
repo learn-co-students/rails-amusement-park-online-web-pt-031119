@@ -1,6 +1,11 @@
 <h1>The Attractions are listed below!</h1>
 
 
+
+<% if current_user.admin %>
+<%= link_to "Add Attraction", new_attraction_path %>
+<%end%> 
+
 <ul>
   <% @attractions.each do |a| %>
     

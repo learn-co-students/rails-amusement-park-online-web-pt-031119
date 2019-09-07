@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :require_login
   helper_method :current_user, :logged_in?
-
+ 
+  
 
   def current_user
     if session[:user_id]
@@ -16,6 +17,9 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
   
+
+
+
   private 
 
   def require_login
