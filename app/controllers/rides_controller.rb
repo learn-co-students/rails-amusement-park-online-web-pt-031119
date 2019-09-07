@@ -5,7 +5,7 @@ class RidesController < ApplicationController
         ride = Ride.new(ride_params)
        
         if ride
-          message = ride.go_on_ride
+          message = ride.take_ride
           flash[:notice] = message
            redirect_to user_path current_user
         end
