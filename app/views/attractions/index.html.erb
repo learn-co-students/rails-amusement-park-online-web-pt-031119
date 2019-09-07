@@ -3,9 +3,14 @@
 
 
 <% if current_user.admin %>
-<%= link_to "Add Attraction", new_attraction_path %>
-<%end%> 
+<%= link_to "New Attraction", new_attraction_path %>
 
+<% @attractions.each do |a| %>
+    
+  <li> <%= link_to "Show #{a.name}", attraction_path(a) %> </li>
+<% end %>
+
+<% else %>
 <ul>
   <% @attractions.each do |a| %>
     
@@ -13,3 +18,4 @@
   <% end %>
 
 </ul>
+<% end %>
