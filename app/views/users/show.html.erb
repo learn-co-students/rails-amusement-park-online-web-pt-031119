@@ -5,9 +5,14 @@
 <br>
 <%=@user.nausea%>
 <br>
-<%=@user.tickets%>
+"Tickets: <%=@user.tickets%>
 <br>
 <%=@user.happiness%>
 <%= admin?(@user) %>
 <br>
 Mood <%=@user.mood%>
+
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <%end%>
+    

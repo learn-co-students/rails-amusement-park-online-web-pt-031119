@@ -17,9 +17,10 @@ class AttractionsController < ApplicationController
     
     def show
         @attraction = Attraction.find_by_id(params[:id])
+        @ride = Ride.new
     end
 
-
+ 
     def attraction_params
         params.require(:attraction).permit(:name, :ticket, :height, :nausea, :tickets, :happiness, :admin)
      end

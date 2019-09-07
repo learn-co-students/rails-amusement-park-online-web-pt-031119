@@ -8,7 +8,7 @@ class CreateAttractions < ActiveRecord::Migration[5.2]
       t.integer :min_height
       t.datetime :created_at
       t.datetime :updated_at
-      t.has_many :rides, foreign_key: true
+      
    
     end
   end
