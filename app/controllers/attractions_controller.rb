@@ -6,7 +6,7 @@ class AttractionsController < ApplicationController
     
     def create
    
-    binding.pry
+    
     redirect_to user_path current_user
     end
     

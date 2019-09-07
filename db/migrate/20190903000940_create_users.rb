@@ -9,6 +9,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :height
       t.boolean :admin, default: false
       t.timestamps
+      t.has_many  :rides, foreign_key: true
+      
     end
   end
 end
