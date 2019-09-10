@@ -1,25 +1,26 @@
-<h1>Create a User</h1>
+<h2>Sign Up</h2>
 
 <%= form_for @user do |f| %>
-  <%= f.label "Name" %><br />
-  <%= f.text_field :name %><br />
-  <%= f.label "Password" %><br />
-  <%= f.password_field :password %><br />
-  <%= f.label "Nausea" %><br />
-  <%= f.text_field :nausea %><br />
-  <%= f.label "Happiness" %><br />
-  <%= f.text_field :happiness %><br />
-  <%= f.label "Tickets" %><br />
-  <%= f.text_field :tickets %><br />
-  <%= f.label "Height" %><br />
-  <%= f.text_field :height %><br />
-  <%= f.label "Admin?" %> <br />
-  <%= f.check_box :admin, {}, true, false %><br />
-  <br />
-  <%= f.submit "Create User" %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :happiness %>
+    <%= f.number_field :happiness %><br>
+
+    <%= f.label :nausea %>
+    <%= f.number_field :nausea %><br>
+
+    <%= f.label :height %>
+    <%= f.number_field :height %><br>
+
+    <%= f.label :tickets %>
+    <%= f.number_field :tickets %><br>
+
+    <%= f.label "Admin?" %>
+    <%= f.check_box :admin %><br>
+
+    <%= f.submit "Create User"%>
 <% end %>
-
-
-<h2><%= link_to "Sign Up", '/' %></h2>
-
-<h2><%= link_to "Sign In", '/signin' %></h2> 

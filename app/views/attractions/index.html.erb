@@ -1,20 +1,14 @@
-<h1>Attractions:</h1>
+<h2>Attractions Index</h2>
 
-<% if !@user.admin %>
-	<ul>
-	<% @attractions.each do |attraction| %>
-	<li><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></li>
-	<% end %>
-	</ul>
-<% end %>
-
-
-<% if @user.admin %>
-	<ul>
-	<% @attractions.each do |attraction| %>
-	<li><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></li>
-	<% end %>
-	</ul>
-
-	<h3><%= link_to "New Attraction", new_attraction_path %></h3>
+<% if current_user.admin %>
+    <%= link_to "New Attraction", new_attraction_path %><br><br>
+    <% @attractions.each do |a| %>
+    <%= link_to "Show #{a.name}", attraction_path(a)%>
+    <br>
+    <% end %>
+<% else %>
+    <% @attractions.each do |a| %>
+        <%= link_to "Go on #{a.name}", attraction_path(a)%>
+        <br>
+    <% end %>
 <% end %> 
