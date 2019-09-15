@@ -1,0 +1,16 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<h1><%= @user.name %> Show Page</h1>
+
+  Name: <%= @user.name %> </br>
+  Mood: <%= @user.mood %> </br>
+  Tickets: <%= @user.tickets %> </br>
+  Height: <%= @user.height %> </br>
+  Nausea: <%= @user.nausea %> </br>
+  Happiness: <%= @user.happiness %> </br>
+  <%= "ADMIN" if @user.admin %> </br>
+
+<%= link_to "See attractions", '/attractions' %>
+<%= link_to "Log Out", '/signout', method: 'delete' %>
