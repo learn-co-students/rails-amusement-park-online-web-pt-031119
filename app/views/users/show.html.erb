@@ -1,0 +1,18 @@
+
+<%=@user.name%>
+<br>
+<%=@user.height%>
+<br>
+<%=@user.nausea%>
+<br>
+"Tickets: <%=@user.tickets%>
+<br>
+<%=@user.happiness%>
+<%= admin?(@user) %>
+<br>
+Mood <%=@user.mood%>
+
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <%end%>
+    
