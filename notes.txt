@@ -1,0 +1,35 @@
+Attraction model
+--has many rides
+--has many users through rides
+
+  name: string
+  tickets: integer
+  nausea_rating: integer
+  happiness_rating: integer
+  min_height: integer
+
+=====================================
+
+Ride model
+--belongs to one attraction
+--belongs to one user
+
+  name: string
+  tickets: integer
+  nausea_rating: integer
+  user_id:integer
+  attraction_id:integer
+
+=====================================
+
+User model
+--has many rides
+--has many attractions through rides
+
+  name: string
+  password: string
+  nausea: integer
+  happiness: integer
+  tickets: integer
+  height: integer
+  admin: boolean

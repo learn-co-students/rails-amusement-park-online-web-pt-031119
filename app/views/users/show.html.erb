@@ -1,0 +1,23 @@
+<h1>User Homepage</h1>
+<br>
+
+<%if !@rides.empty?%>
+  <%=@rides.last.take_ride%>
+<%end%>
+Name: <%=@user.name%><br>
+Mood: <%=@user.mood%><br>
+Tickets: <%=@user.tickets%><br>
+Height: <%=@user.height%><br>
+<%if @user.admin == true%>
+ADMIN<br>
+<%end%>
+<br>
+<br>
+<%=link_to 'See attractions', attractions_path%>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%=link_to 'Log Out', '/logout'%>
